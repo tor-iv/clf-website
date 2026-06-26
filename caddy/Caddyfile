@@ -1,4 +1,4 @@
-caregiverliberation.org {
+caregiverliberation.org, 46.225.222.111.sslip.io {
   encode gzip
   handle /uploads/* {
     root * /app/data
