@@ -71,6 +71,11 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
+# next-intl config and message files are not traced by standalone output;
+# copy them explicitly so getTranslations() and the i18n plugin can find them.
+COPY --from=builder --chown=nextjs:nodejs /app/i18n ./i18n
+COPY --from=builder --chown=nextjs:nodejs /app/messages ./messages
+
 # ── Native module fixup ────────────────────────────────────────────────────
 # Next.js standalone tracing does NOT reliably follow the .pnpm virtual-store
 # for better-sqlite3, so the .node binary built for this platform is missed.
