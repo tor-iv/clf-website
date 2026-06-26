@@ -5,7 +5,9 @@ caregiverliberation.org {
     file_server
   }
   reverse_proxy app:3000
-  handle /healthz { respond "ok" 200 }
+  handle /healthz {
+    respond "ok" 200
+  }
 }
 
 www.caregiverliberation.org {
