@@ -1,1 +1,39 @@
-{}
+{
+  "nav": {
+    "home": "Nyumbani",
+    "about": "Kuhusu",
+    "whatWeDo": "Tunachofanya",
+    "team": "Timu",
+    "organizations": "Mashirika",
+    "campaigns": "Kampeni",
+    "impact": "Athari",
+    "contact": "Wasiliana",
+    "donate": "Saidia Walezi"
+  },
+  "home": {
+    "hero": "Kuimarisha Moyo wa Afya ya Jamii",
+    "heroSub": "Kuhamasisha ufadhili wa moja kwa moja na wa uwazi kwa vyama vya walezi duniani kote.",
+    "cta": "Saidia Walezi Bila Masharti",
+    "statsTitle": "Kesi ya Ufadhili wa Moja kwa Moja",
+    "orgTitle": "Mashirika Tunayounga Mkono",
+    "videoTitle": "Wafanyakazi wa Afya ya Jamii ni Nani?"
+  },
+  "about": {
+    "title": "Kuhusu Sisi",
+    "problemTitle": "Tatizo",
+    "tocTitle": "Nadharia ya Mabadiliko"
+  },
+  "contact": {
+    "title": "Wasiliana Nasi",
+    "name": "Jina",
+    "email": "Barua pepe",
+    "organization": "Shirika (si lazima)",
+    "message": "Ujumbe",
+    "submit": "Tuma Ujumbe",
+    "success": "Ujumbe umetumwa — asante!"
+  },
+  "footer": {
+    "tagline": "Kuimarisha Moyo wa Afya ya Jamii",
+    "rights": "Haki zote zimehifadhiwa."
+  }
+}

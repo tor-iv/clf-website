@@ -1,1 +1,39 @@
-{}
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "whatWeDo": "Ce Que Nous Faisons",
+    "team": "Équipe",
+    "organizations": "Organisations",
+    "campaigns": "Campagnes",
+    "impact": "Impact",
+    "contact": "Contact",
+    "donate": "Financer les Soignants"
+  },
+  "home": {
+    "hero": "Ressourcer le Cœur de la Santé Communautaire",
+    "heroSub": "Mobiliser des financements flexibles et transparents directement aux associations de soignants dans le monde entier.",
+    "cta": "Financer les Soignants Inconditionnellement",
+    "statsTitle": "Le Cas pour le Financement Direct",
+    "orgTitle": "Organisations que Nous Soutenons",
+    "videoTitle": "Qui sont les Agents de Santé Communautaire ?"
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "problemTitle": "Le Problème",
+    "tocTitle": "Théorie du Changement"
+  },
+  "contact": {
+    "title": "Nous Contacter",
+    "name": "Nom",
+    "email": "E-mail",
+    "organization": "Organisation (optionnel)",
+    "message": "Message",
+    "submit": "Envoyer le Message",
+    "success": "Message envoyé — merci !"
+  },
+  "footer": {
+    "tagline": "Ressourcer le Cœur de la Santé Communautaire",
+    "rights": "Tous droits réservés."
+  }
+}

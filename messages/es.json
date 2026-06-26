@@ -1,1 +1,39 @@
-{}
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "whatWeDo": "Qué Hacemos",
+    "team": "Equipo",
+    "organizations": "Organizaciones",
+    "campaigns": "Campañas",
+    "impact": "Impacto",
+    "contact": "Contacto",
+    "donate": "Financiar Cuidadores"
+  },
+  "home": {
+    "hero": "Financiando el Corazón de la Salud Comunitaria",
+    "heroSub": "Movilizando fondos flexibles y transparentes directamente a asociaciones de cuidadores en todo el mundo.",
+    "cta": "Financiar Cuidadores Incondicionalmente",
+    "statsTitle": "El Caso para la Financiación Directa",
+    "orgTitle": "Organizaciones que Apoyamos",
+    "videoTitle": "¿Quiénes son los Trabajadores de Salud Comunitaria?"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "problemTitle": "El Problema",
+    "tocTitle": "Teoría del Cambio"
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "name": "Nombre",
+    "email": "Correo",
+    "organization": "Organización (opcional)",
+    "message": "Mensaje",
+    "submit": "Enviar Mensaje",
+    "success": "¡Mensaje enviado — gracias!"
+  },
+  "footer": {
+    "tagline": "Financiando el Corazón de la Salud Comunitaria",
+    "rights": "Todos los derechos reservados."
+  }
+}

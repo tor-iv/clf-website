@@ -1,1 +1,39 @@
-{}
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "whatWeDo": "What We Do",
+    "team": "Team",
+    "organizations": "Organizations",
+    "campaigns": "Campaigns",
+    "impact": "Impact",
+    "contact": "Contact",
+    "donate": "Fund Caregivers"
+  },
+  "home": {
+    "hero": "Resourcing the Heart of Community Health",
+    "heroSub": "Mobilizing flexible, transparent funding directly to caregiver associations worldwide.",
+    "cta": "Fund Caregivers Unconditionally",
+    "statsTitle": "The Case for Direct Funding",
+    "orgTitle": "Organizations We Support",
+    "videoTitle": "Who Are Community Health Workers?"
+  },
+  "about": {
+    "title": "About Us",
+    "problemTitle": "The Problem",
+    "tocTitle": "Theory of Change"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "organization": "Organization (optional)",
+    "message": "Message",
+    "submit": "Send Message",
+    "success": "Message sent — thank you!"
+  },
+  "footer": {
+    "tagline": "Resourcing the Heart of Community Health",
+    "rights": "All rights reserved."
+  }
+}
