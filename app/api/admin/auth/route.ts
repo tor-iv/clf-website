@@ -1,9 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { timingSafeEqual } from 'crypto';
 import { setAdminSession, clearAdminSession } from '@/lib/auth';
 
 export async function POST(req: NextRequest) {
   const { password } = await req.json();
-  if (password !== process.env.ADMIN_PASSWORD) {
+  const expected = process.env.ADMIN_PASSWORD ?? '';
+  // timingSafeEqual prevents timing attacks; pad to equal length before comparing
+  const pwBuf = Buffer.from(typeof password === 'string' ? password : '');
+  const exBuf = Buffer.from(expected);
+  const match =
+    pwBuf.length === exBuf.length &&
+    timingSafeEqual(pwBuf, exBuf);
+  if (!match) {
     return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
   }
   await setAdminSession();
