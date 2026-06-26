@@ -4,6 +4,7 @@ import { StatsSection } from '@/components/StatsSection';
 import Link from 'next/link';
 import Image from 'next/image';
 import { queries } from '@/lib/db';
+import { DONATE_URL } from '@/lib/site-config';
 
 export default async function HomePage() {
   const [t, locale] = await Promise.all([getTranslations('home'), getLocale()]);
@@ -34,7 +35,9 @@ export default async function HomePage() {
           </h1>
           <p className="text-clf-warm-gray text-lg md:text-xl max-w-xl mb-10">{t('heroSub')}</p>
           <Link
-            href="#open-collective-link"
+            href={DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-clf-red text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-clf-red/80 transition-colors"
           >
             {t('cta')}

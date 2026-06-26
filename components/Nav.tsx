@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
+import { DONATE_URL } from '@/lib/site-config';
 import { Logo } from './Logo';
 import { LocaleSwitcher } from './LocaleSwitcher';
 import { useState } from 'react';
@@ -33,7 +34,9 @@ export function Nav() {
           ))}
           <LocaleSwitcher />
           <Link
-            href="#open-collective-link"
+            href={DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 bg-clf-red text-white px-4 py-2 rounded-lg hover:bg-clf-red/90 transition-colors font-semibold text-sm"
           >
             {t('donate')}
@@ -53,7 +56,12 @@ export function Nav() {
             </Link>
           ))}
           <LocaleSwitcher />
-          <Link href="#open-collective-link" className="bg-clf-red text-white text-center px-4 py-2 rounded-lg font-semibold">
+          <Link
+            href={DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-clf-red text-white text-center px-4 py-2 rounded-lg font-semibold"
+          >
             {t('donate')}
           </Link>
         </div>
