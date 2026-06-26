@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers';
-import { createHmac } from 'crypto';
+import { createHmac, timingSafeEqual } from 'crypto';
 
 const SESSION_COOKIE = 'clf_admin_session';
 
@@ -14,7 +14,10 @@ export async function isAuthenticated(): Promise<boolean> {
     const cookieStore = await cookies();
     const value = cookieStore.get(SESSION_COOKIE)?.value;
     if (!value) return false;
-    return value === signedToken();
+    const expected = signedToken();
+    // timingSafeEqual prevents timing attacks; buffers must be equal length
+    if (value.length !== expected.length) return false;
+    return timingSafeEqual(Buffer.from(value), Buffer.from(expected));
   } catch {
     return false;
   }
