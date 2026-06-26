@@ -1,20 +1,32 @@
 import { cookies } from 'next/headers';
+import { createHmac } from 'crypto';
 
 const SESSION_COOKIE = 'clf_admin_session';
-const SESSION_VALUE = 'authenticated';
+
+function signedToken(): string {
+  const secret = process.env.SESSION_SECRET;
+  if (!secret) throw new Error('SESSION_SECRET is not set');
+  return createHmac('sha256', secret).update('clf-admin-session').digest('base64url');
+}
 
 export async function isAuthenticated(): Promise<boolean> {
-  const cookieStore = await cookies();
-  return cookieStore.get(SESSION_COOKIE)?.value === SESSION_VALUE;
+  try {
+    const cookieStore = await cookies();
+    const value = cookieStore.get(SESSION_COOKIE)?.value;
+    if (!value) return false;
+    return value === signedToken();
+  } catch {
+    return false;
+  }
 }
 
 export async function setAdminSession() {
   const cookieStore = await cookies();
-  cookieStore.set(SESSION_COOKIE, SESSION_VALUE, {
+  cookieStore.set(SESSION_COOKIE, signedToken(), {
     httpOnly: true,
     secure: process.env.HTTPS === 'true',
     sameSite: 'lax',
-    maxAge: 60 * 60 * 24 * 7, // 7 days
+    maxAge: 60 * 60 * 24 * 7,
     path: '/',
   });
 }
