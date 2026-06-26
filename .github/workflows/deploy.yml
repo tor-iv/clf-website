@@ -1,0 +1,21 @@
+name: Deploy to Hetzner
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/ssh-action@v1.2.5
+        with:
+          host: ${{ secrets.HETZNER_IP }}
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          fingerprint: ${{ secrets.SSH_HOST_FINGERPRINT }}
+          script: |
+            cd /opt/clf-website
+            git pull origin main
+            docker compose build app
+            docker compose up -d --force-recreate app
+            docker compose restart caddy
+            docker image prune -f
