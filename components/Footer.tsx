@@ -1,6 +1,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Logo } from './Logo';
 import Link from 'next/link';
+import { DONATE_URL } from '@/lib/site-config';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -27,6 +28,14 @@ export function Footer() {
         <div>
           <h4 className="font-semibold mb-3">Caregiver Liberation Fund</h4>
           <p className="text-sm text-white/70">© {new Date().getFullYear()} CLF. {t('rights')}</p>
+          <a
+            href={DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-clf-red text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-clf-red/80 transition-colors mt-4"
+          >
+            Fund Caregivers
+          </a>
         </div>
       </div>
     </footer>

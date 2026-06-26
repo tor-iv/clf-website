@@ -51,7 +51,7 @@ export function Nav() {
       {open && (
         <div className="md:hidden bg-clf-off-white border-t border-clf-warm-gray px-4 py-4 flex flex-col gap-4">
           {links.map(l => (
-            <Link key={l.href} href={l.href} className="text-clf-black font-medium border-l-[3px] border-clf-red pl-3">
+            <Link key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-clf-black font-medium border-l-[3px] border-clf-red pl-3">
               {l.label}
             </Link>
           ))}
@@ -60,6 +60,7 @@ export function Nav() {
             href={DONATE_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
             className="bg-clf-red text-white text-center px-4 py-2 rounded-lg font-semibold"
           >
             {t('donate')}
