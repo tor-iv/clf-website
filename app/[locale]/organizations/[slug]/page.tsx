@@ -1,4 +1,5 @@
 import { queries } from '@/lib/db';
+import { safeHttpUrl } from '@/lib/url';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
@@ -61,7 +62,7 @@ export default async function OrgProfilePage({
           Contributions go directly through Open Collective with full transparency.
         </p>
         <a
-          href={org.open_collective_url || '#open-collective-link'}
+          href={safeHttpUrl(org.open_collective_url)}
           className="inline-block bg-white text-clf-red px-6 py-3 rounded-xl font-semibold hover:bg-clf-off-white transition-colors"
         >
           Fund This Organization
