@@ -3,10 +3,10 @@ import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 
 const locales = [
-  { code: 'en', label: 'EN' },
-  { code: 'es', label: 'ES' },
-  { code: 'fr', label: 'FR' },
-  { code: 'sw', label: 'SW' },
+  { code: 'en', label: 'English' },
+  { code: 'es', label: 'Español' },
+  { code: 'fr', label: 'Français' },
+  { code: 'sw', label: 'Kiswahili' },
 ];
 
 export function LocaleSwitcher() {
@@ -21,16 +21,17 @@ export function LocaleSwitcher() {
   }
 
   return (
-    <div className="flex gap-1 text-sm">
+    <select
+      value={locale}
+      onChange={(e) => switchLocale(e.target.value)}
+      aria-label="Select language"
+      className="text-sm bg-transparent border border-clf-warm-gray rounded px-2 py-0.5 text-clf-text focus:outline-none focus:ring-1 focus:ring-clf-red cursor-pointer"
+    >
       {locales.map((l) => (
-        <button
-          key={l.code}
-          onClick={() => switchLocale(l.code)}
-          className={`px-2 py-0.5 rounded ${locale === l.code ? 'bg-clf-red text-white' : 'text-clf-text/50 hover:text-clf-text'}`}
-        >
+        <option key={l.code} value={l.code}>
           {l.label}
-        </button>
+        </option>
       ))}
-    </div>
+    </select>
   );
 }
