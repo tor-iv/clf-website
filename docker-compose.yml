@@ -1,0 +1,36 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_APP_URL: https://caregiverliberation.org
+    restart: unless-stopped
+    expose:
+      - "3000"
+    volumes:
+      - clfdata:/app/data
+    environment:
+      SESSION_SECRET: ${SESSION_SECRET}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      DB_PATH: /app/data/clf.db
+      DATA_DIR: /app/data/uploads
+      HTTPS: "true"
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+      - clfdata:/app/data:ro
+    depends_on:
+      - app
+
+volumes:
+  clfdata:
+  caddy_data:
+  caddy_config:
