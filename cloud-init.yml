@@ -12,5 +12,7 @@ runcmd:
   - apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
   - systemctl enable docker
   - mkdir -p /opt/clf-website
-  # Add your deploy SSH public key to authorized_keys before provisioning:
-  # echo "ssh-ed25519 AAAA... your-deploy-key" >> /root/.ssh/authorized_keys
+  - mkdir -p /root/.ssh
+  - chmod 700 /root/.ssh
+  - echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN+aVpdq+2R5pOW4hqkUiQIPGDBxbjIUqA/PkpjWXdlA clf-deploy" >> /root/.ssh/authorized_keys
+  - chmod 600 /root/.ssh/authorized_keys
