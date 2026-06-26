@@ -29,7 +29,7 @@ export default function WhatWeDoPage() {
           },
         ].map((a) => (
           <div key={a.title} className="flex gap-6">
-            <div className="w-1 bg-clf-red rounded-full flex-shrink-0" />
+            <div className="w-[3px] bg-clf-red flex-shrink-0" />
             <div>
               <h2 className="font-display text-2xl font-bold mb-2">{a.title}</h2>
               <p className="font-sans text-clf-text/70">{a.desc}</p>

@@ -1,12 +1,14 @@
 import { useTranslations } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 import { VideoEmbed } from '@/components/VideoEmbed';
 import { StatsSection } from '@/components/StatsSection';
 import Link from 'next/link';
 import Image from 'next/image';
 import { queries } from '@/lib/db';
 
-export default function HomePage() {
+export default async function HomePage() {
   const t = useTranslations('home');
+  const locale = await getLocale();
   const featuredOrgs = queries.getFeaturedOrgs.all() as any[];
 
   return (
@@ -62,7 +64,7 @@ export default function HomePage() {
               return (
                 <Link
                   key={org.slug}
-                  href={`/en/organizations/${org.slug}`}
+                  href={`/${locale}/organizations/${org.slug}`}
                   className="flex rounded-2xl border border-clf-warm-gray bg-white overflow-hidden hover:shadow-lg transition-shadow group"
                 >
                   {/* Red left sidebar */}
