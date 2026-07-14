@@ -2,12 +2,12 @@ const team = [
   {
     name: 'Garrett Wheeler',
     role: 'Co-Founder',
-    photo: '/images/placeholder-team.jpg',
+    photo: '/images/garrett-wheeler.jpg',
   },
   {
     name: 'Josef Ernst',
     role: 'Co-Founder',
-    photo: '/images/placeholder-team.jpg',
+    photo: '/images/josef-ernst.jpg',
   },
 ];
 
