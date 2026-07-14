@@ -12,10 +12,10 @@ const config: Config = {
         clf: {
           red:          '#B91C1C',
           black:        '#1C1917',
-          'off-white':  '#FAFAF9',
-          'warm-gray':  '#E7E5E4',
+          'off-white':  '#F3ECE1',
+          'warm-gray':  '#DFD3C0',
           amber:        '#FEF3C7',
-          text:         '#44403C',
+          text:         '#3A342C',
         },
       },
     },

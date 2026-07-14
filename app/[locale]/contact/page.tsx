@@ -1,9 +1,11 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+import { PartnerApplicationForm } from '@/components/PartnerApplicationForm';
 
 export default function ContactPage() {
   const t = useTranslations('contact');
+  const [tab, setTab] = useState<'contact' | 'apply'>('contact');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -24,7 +26,29 @@ export default function ContactPage() {
         Reach Out
       </p>
       <h1 className="font-display text-5xl font-bold mb-8">{t('title')}</h1>
-      {status === 'success' ? (
+
+      <div className="flex gap-2 mb-8 border-b border-clf-warm-gray">
+        <button
+          onClick={() => setTab('contact')}
+          className={`px-4 py-2 font-semibold text-sm border-b-2 -mb-px transition-colors ${
+            tab === 'contact' ? 'border-clf-red text-clf-red' : 'border-transparent text-clf-text/50 hover:text-clf-text'
+          }`}
+        >
+          Send a Message
+        </button>
+        <button
+          onClick={() => setTab('apply')}
+          className={`px-4 py-2 font-semibold text-sm border-b-2 -mb-px transition-colors ${
+            tab === 'apply' ? 'border-clf-red text-clf-red' : 'border-transparent text-clf-text/50 hover:text-clf-text'
+          }`}
+        >
+          Apply as a Recipient Partner Organization
+        </button>
+      </div>
+
+      {tab === 'apply' ? (
+        <PartnerApplicationForm />
+      ) : status === 'success' ? (
         <div className="bg-clf-amber text-clf-black p-6 rounded-xl text-center font-semibold">
           {t('success')}
         </div>

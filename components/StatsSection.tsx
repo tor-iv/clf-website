@@ -1,9 +1,4 @@
-const stats = [
-  { value: '1M+', label: 'Community Health Workers globally' },
-  { value: '$3–$10', label: 'ROI per dollar invested in CHWs' },
-  { value: '70%', label: 'of health outcomes influenced by social determinants' },
-  { value: '<5%', label: 'of global health funding reaches local actors directly' },
-];
+import { evidenceStats } from '@/lib/evidence-stats';
 
 export function StatsSection({ title }: { title: string }) {
   return (
@@ -12,11 +7,23 @@ export function StatsSection({ title }: { title: string }) {
         {/* Eyebrow with signature line */}
         <p className="text-xs tracking-[0.3em] uppercase text-clf-warm-gray border-l-[3px] border-clf-red pl-3 mb-4">Evidence</p>
         <h2 className="font-display text-4xl md:text-5xl font-extrabold mb-16">{title}</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map(s => (
-            <div key={s.value} className="border-l-[3px] border-clf-red pl-4">
-              <div className="font-display text-5xl font-extrabold text-clf-red leading-none mb-2">{s.value}</div>
-              <div className="text-clf-warm-gray text-sm leading-snug">{s.label}</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {evidenceStats.map(s => (
+            <div key={s.label} className="border-l-[3px] border-clf-red pl-4">
+              <div className="font-display text-4xl md:text-5xl font-extrabold text-clf-red leading-none mb-2">{s.value}</div>
+              <div className="text-clf-warm-gray text-sm leading-snug mb-2">{s.label}</div>
+              {s.url ? (
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-clf-warm-gray/50 hover:text-clf-warm-gray underline underline-offset-2"
+                >
+                  {s.source}
+                </a>
+              ) : (
+                <div className="text-xs text-clf-warm-gray/50">{s.source}</div>
+              )}
             </div>
           ))}
         </div>

@@ -51,6 +51,18 @@ db.exec(`
     message TEXT NOT NULL,
     created_at TEXT DEFAULT (datetime('now'))
   );
+
+  CREATE TABLE IF NOT EXISTS partner_applications (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    org_name TEXT NOT NULL,
+    contact_name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    country TEXT NOT NULL,
+    website TEXT,
+    description TEXT NOT NULL,
+    status TEXT DEFAULT 'new',
+    created_at TEXT DEFAULT (datetime('now'))
+  );
 `);
 
 export const queries = {
@@ -60,4 +72,7 @@ export const queries = {
   getAllCampaigns: db.prepare("SELECT c.*, o.name as org_name FROM campaigns c LEFT JOIN organizations o ON c.org_id = o.id ORDER BY c.start_date DESC"),
   getCampaignBySlug: db.prepare("SELECT c.*, o.name as org_name FROM campaigns c LEFT JOIN organizations o ON c.org_id = o.id WHERE c.slug = ?"),
   createContact: db.prepare('INSERT INTO contact_submissions (name, email, organization, message) VALUES (?, ?, ?, ?)'),
+  createPartnerApplication: db.prepare(
+    'INSERT INTO partner_applications (org_name, contact_name, email, country, website, description) VALUES (?, ?, ?, ?, ?, ?)'
+  ),
 };

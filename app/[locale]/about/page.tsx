@@ -8,9 +8,35 @@ export default function AboutPage() {
         About CLF
       </p>
       <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">{t('title')}</h1>
-      <p className="font-sans text-xl text-clf-text/60 mb-12">
+      <p className="font-sans text-xl text-clf-text/60 mb-8">
         Our mission is to empower caregivers by mobilizing flexible and transparent funding to caregiver associations globally, bridging the gap between supranational fiscal donors and community health actors on the ground, enabling locally-led, grassroots solutions that advance equitable health systems worldwide.
       </p>
+
+      <div className="border-l-[3px] border-clf-red pl-6 mb-12">
+        <p className="font-sans text-lg text-clf-text/70 italic">
+          We envision a world where caregivers are liberated from structural barriers to funding and fully resourced to continue organizing and leading the frontline of community health work with greater impact at a larger scale.
+        </p>
+      </div>
+
+      {/*
+        TODO: Survey data section — pending real figures from CLF's own survey
+        (the reimbursement gap, and the % of caregivers lacking basic needs met).
+        Uncomment and fill in once the numbers are supplied — do not publish
+        placeholder statistics on a donor-facing page.
+
+        <h2 className="font-display text-3xl font-bold mb-4 text-clf-red">The Need We See</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="border border-clf-warm-gray rounded-xl p-6">
+            <div className="font-display text-4xl font-extrabold text-clf-red mb-2">__%</div>
+            <div className="font-sans text-clf-text/70">of caregivers report a reimbursement gap between costs incurred and funds received</div>
+          </div>
+          <div className="border border-clf-warm-gray rounded-xl p-6">
+            <div className="font-display text-4xl font-extrabold text-clf-red mb-2">__%</div>
+            <div className="font-sans text-clf-text/70">of caregivers surveyed do not have their own basic needs met</div>
+          </div>
+        </div>
+        <p className="font-sans text-clf-text/60 mb-12">Source: CLF caregiver survey, [year].</p>
+      */}
 
       <h2 className="font-display text-3xl font-bold mb-4 text-clf-red">{t('problemTitle')}</h2>
       <div className="font-sans prose prose-lg max-w-none mb-12 text-clf-text">

@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# local runtime database (Docker-mounted volume in production, never git-tracked)
+/data/
+
 # production
 /build
 

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function WhatWeDoPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
@@ -36,6 +38,17 @@ export default function WhatWeDoPage() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-16 w-48 md:w-64">
+        <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+          <Image
+            src="/images/joe-teaching.jpg"
+            alt="Josef leading a community health worker training session"
+            fill
+            className="object-cover opacity-70"
+          />
+        </div>
       </div>
     </div>
   );

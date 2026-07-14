@@ -16,7 +16,7 @@ export default async function HomePage() {
       <section className="relative min-h-screen flex items-end pb-16 md:pb-24 bg-clf-black text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-bg.jpg"
+            src="/images/hero-rural-town.jpg"
             alt=""
             fill
             className="object-cover opacity-30"
@@ -24,24 +24,32 @@ export default async function HomePage() {
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 md:px-8 w-full">
-          <p className="font-sans text-xs tracking-[0.3em] uppercase text-clf-warm-gray mb-6 border-l-[3px] border-clf-red pl-3">
+          <p className="font-sans text-sm tracking-[0.3em] uppercase text-clf-warm-gray mb-6 border-l-[3px] border-clf-red pl-3">
             Caregiver Liberation Fund
           </p>
           {/* "Resourcing the Heart of Community Health" — "Heart" oversized in red */}
           <h1 className="font-display font-extrabold leading-none mb-8">
-            <span className="block text-4xl md:text-6xl text-white/80">Resourcing the</span>
+            <span className="block text-5xl md:text-7xl text-white/80">Resourcing the</span>
             <span className="block text-7xl md:text-[10rem] text-clf-red leading-none -ml-1">Heart</span>
-            <span className="block text-4xl md:text-6xl text-white/80">of Community Health</span>
+            <span className="block text-5xl md:text-7xl text-white/80">of Community Health</span>
           </h1>
           <p className="text-clf-warm-gray text-lg md:text-xl max-w-xl mb-10">{t('heroSub')}</p>
-          <Link
-            href={DONATE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-clf-red text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-clf-red/80 transition-colors"
-          >
-            {t('cta')}
-          </Link>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href={DONATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-clf-red text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-clf-red/80 transition-colors"
+            >
+              {t('cta')}
+            </Link>
+            <Link
+              href={`/${locale}/apply`}
+              className="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-clf-black transition-colors"
+            >
+              {t('applyCta')}
+            </Link>
+          </div>
         </div>
       </section>
 
